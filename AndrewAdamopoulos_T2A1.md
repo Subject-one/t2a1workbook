@@ -255,7 +255,7 @@ print(f"The result is: {fahrenheit}")
 ### **a.**
     Indentation Error
     Indentation Error - Code block
-    
+    Type Error
 
 
 
