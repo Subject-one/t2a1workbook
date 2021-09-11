@@ -253,13 +253,166 @@ print(f"The result is: {fahrenheit}")
      print(message)
 ```
 ### **a.**
-    Indentation Error
-    Indentation Error - Code block
-    Type Error
-
-
+    - Indentation Error
+    - Indentation Error / Code block
+    - Type Error +=
+    - Type Error string
+    - if statments to elif
+    - Removed message = ""
+    - Removed number =+ str(number)
+    - Changed 3 != 0 to 3 == 0
+    - Changed or to and
+    - Changed print(message) to print(number)
+    - Changed all message to number
+    - Added new line if % by 3 and 5: FizzBuzz
 
 ### **b.**
+```python
+# Bad
+ for number in range(1, 100):
+```
+    Indentation must be fixed for this line. Whitespace creating an error. Backspaced.
+
+```python
+# Bad
+message = ''
+```
+```python
+# Good
+if number % 3 and number % 5:
+```
+    All lines in the codeblock have indentation errors. Needed to remove whitespace.
+    This variable isn't needed. Instead we can write a code that will say if we reach a number that is % 3 and 5, we can print FizzBuzz.
+
+```python
+# Bad
+Multiple if statements
+```
+    Bad to continue using if statements when inside the same codeblock. 
+    Replace if with elif(else if) if we want it to do another action if the first condition isn't met.
+
+```python
+# Bad
+Remove message =+ "Fizz"
+Remove message =+ "Buzz"
+```
+    Incorrect format +=. 
+    The code here isn't needed at all as we replaced it above.
+    The goal was to get FizzBuzz printed on the same line, however it was a pointless addition with errors.
+
+```python
+# Bad
+number =+ str(number)
+```
+    Incorrect format +=.
+    This code contained indent and type errors.
+
+```python
+# Bad
+if number % 5 == 0 or number % 3 != 0:
+```
+```python
+# Good
+elif number % 5 == 0 and number % 3 == 0:
+```
+    Changed if to elif for proper structure. 
+    Changed or to and. We want both to be true instead of just possibly one.
+    Changed != to ==. We want % 3 to equal in order to print the correct statement.
+```python
+# Bad
+if number % 5 == 0 or number % 3 != 0:
+number =+ str(number)
+```
+```python
+# Good
+print(number)
+```
+    print(message) changed to print(number) because we want to iterate through the numbers in our range. 
+
+```python
+# Final
+for number in range(1, 100):
+    if number % 3 and number % 5:
+        print("FizzBuzz")
+    elif number % 3 != 0:
+        print("Fizz")
+    elif number % 5 != 0:
+        print("Buzz")
+    elif number % 5 == 0 and number % 3 == 0:
+        print(number)
+```
+
+## **7.**
+
+![Flowchart](flownew.png)
+
+function to find primes:
+    create a variable to hold list of primes
+    for a number NUM in range of 0 to 100 with increments of 1
+        if the number NUM is greater than 1
+            for a iterator I in range of 2 to number NUM
+                if number NUM is divisible by iterator I
+                    break out of loop
+                else increase iterator by 1
+            if loop is not broken
+                add number NUM to list of primes
+    return list of primes
+
+```python
+def find_primes():
+    prime_list = []
+    for num in range(0, 100 + 1):
+        if num > 1:
+            for i in range(2, num):
+                if (num % i) == 0:
+                    break
+                else:
+                    continue
+            else:
+                prime_list.append(num)
+    return prime_list
+```
+
+## **8.** 
+*Merge Sort*
+
+    Merge sort is considered a divide and conquer algorithm. 
+    The divide and conque algorithm can be three sections to be explained.
+    The first is to divide, creating sub like smaller problems.
+    Mergesort is called to divide the array recursively until the size becomes one.
+    Then we conquer, calling in relation to the problems until solved. 
+    And finally we combine the sub problems which we aim to get a solution to the final problem.
+    Merge sort (fn. merge()) divides an array into halves creating sub arrays. 
+    It follows by sorting and merging the two newly sorted halves, which the function is called for.
+
+    To recap: Mergesort will be called to continually divide the array by half, until each problem is its own.
+    It will read the numbers and sort them into new parts. Followed by dividing again and finding the new solution. 
+    Finally merging the array together at the end.
+
+    Merge sort is much slower calculating smaller inputs compared to other sorting algorithms. 
+    It requires additional memory space of BigO(n) to utilise the temporary array. 
+    Merge sort has sequential data access, meaning the need for random access is low.
+    Seen as good and bad, it will always go through its entire process of divide and conquer, even if the array it's given has already been sorted.
+
+*Bubble Sort*
+
+    Bubble sort is considered to be the most basic and simple of the sorting algorithms.
+    The method used is to contiually swap adjacent elements, if they are found to be in the wrong order.
+    It does this in passes, passing elements, swapping and passing again.
+    If an element is found to be swapped, it will continue to pass until a final pass is found with no swaps required.
+    Regardless of if the array is sorted or not, Bubble sort will run on BigO(n^2). 
+    Since nested loops are linked to BigO(n^2), we know to expect an inner and outer loop.
+    Bubble sort can be used in BigO(n) where two elements require sorting and is often used for simplicity.
+
+    To recap: Bubble sort will continually move the largest element to the right, while moving the lowest to the left.
+    It will continue to run until a pass where no element was swapped has been accomplished.
+    Once it passes with all adjacent elements unchanged, it will complete.
+
+
+## **9.** 
+
+    Because Bubble and Merge sort are so different in how they 
+
 
 
 
@@ -273,3 +426,6 @@ https://pythonguides.com/python-pass-by-reference-or-value/
 https://www.geeksforgeeks.org/pass-by-reference-vs-value-in-python/
 https://clouds.eos.ubc.ca/~phil/courses/atsc301_private/whirlwind/02-Basic-Python-Syntax.html
 https://www.tutorialspoint.com/python/python_functions.htm
+https://www.geeksforgeeks.org/merge-sort/
+https://www.programiz.com/dsa/bubble-sort
+https://www.geeksforgeeks.org/bubble-sort/
